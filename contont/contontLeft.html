@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="qb-content-wrapper">
+        <div class="qb-content">
+            <!--主要内容-->
+            <div class="container-fluid">
+                <div class="row qb-content-wrapper qb-main-content">
+                    <div>
+                        <ul class="nav nav-tabs tabs" role="tablist">
+                            <li role="presentation" class="tab-list active">
+                                <a href="#home" rel="external nofollow" aria-controls="home" role="tab"
+                                    data-toggle="tab">全部
+                                    <i class="fa fa-remove tab-close"></i></a>
+                            </li>
+                            <li role="presentation" class="tab-list" onclick="list('#profile2 ul')"><a href="#profile2"
+                                    rel="external nofollow" rel="external nofollow" aria-controls="profile" role="tab"
+                                    data-toggle="tab">精华
+                                    <i class="fa fa-remove tab-close"></i></a>
+                            </li>
+                            <li role="presentation" class="tab-list" onclick="list('#home3 ul')">
+                                <a href="#home3" rel="external nofollow" aria-controls="home" role="tab"
+                                    data-toggle="tab">分享
+                                    <i class="fa fa-remove tab-close"></i></a>
+                            </li>
+                            <li role="presentation" class="tab-list" onclick="list('#profile4 ul')"><a href="#profile4"
+                                    rel="external nofollow" rel="external nofollow" aria-controls="profile1" role="tab"
+                                    data-toggle="tab">问答
+                                    <i class="fa fa-remove tab-close"></i></a>
+                            </li>
+                            <li role="presentation" class="tab-list" onclick="list('#profile5 ul')"><a href="#profile5"
+                                    rel="external nofollow" rel="external nofollow" aria-controls="profile1" role="tab"
+                                    data-toggle="tab">招聘
+                                    <i class="fa fa-remove tab-close"></i></a>
+                            </li>
+                            <li role="presentation" class="tab-list" onclick="list('#profile6 ul')"><a href="#profile6"
+                                    rel="external nofollow" rel="external nofollow" aria-controls="profile1" role="tab"
+                                    data-toggle="tab">客户端测试
+                                    <i class="fa fa-remove tab-close"></i></a>
+                            </li>
+                        </ul>
+                        <!-- Tab panes -->
+
+
+
+
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home">
+                                <ul>
+
+                                </ul>
+
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile2">
+                                <ul>
+                                </ul>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="home3">
+                                <ul>
+                                </ul>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile4">
+                                <ul>
+                                </ul>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile5">
+                                <ul>
+                                </ul>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile6">
+                                <ul>
+                                </ul>
+                            </div>
+                        </div>
+                        <nav aria-label="Page navigation" class="navlist">
+                            <ul class="pagination">
+                                <li>
+                                    <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.tab-close').on('click', function (ev) {
+            var ev = window.event || ev;
+            ev.stopPropagation();
+        })
+
+        list('#home ul')
+        //申请列表
+        function list (demo) {
+            $.ajax({
+                url: "https://www.fastmock.site/mock/94457211bca1afd7e9619b58abc650f2/_shop-01/api/list",
+                type: "get",
+                data: { page: 1, total: 10 },
+                success: function (res) {
+                    let html = ``
+                    res.list.forEach(element => {
+                        html += ` <li>
+                                      <div>
+                                        <img class="TabDataAvauter" src="${element.avaturl}" alt="">
+                                        <span class="TabDataNum">${element.number}</span>`
+                        if (element.istop == true) { html += `  <span class="topIcon">置顶</span>` }
+                        html += `   <p class="TabDataTitle" title="${element.title}">${element.title}</p>
+                                      </div> 
+                                      <div>
+                                          <img class="TabDataAvauter" src="${element.titleIMg}" alt="">
+                                          <p class="Tabtime">${element.time}</p>
+                                      </div>
+                                    </li>`
+
+                    });
+                    $(demo).append(html)
+                }
+            })
+        }
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+*{
+    list-style: none;
+    margin: 0;
+}
+p{margin: 0;}
+/* 顶部 */
+.TopBander{
+    width: 100%;
+    background-color: #444;
+}
+.TopBanderContont{
+    width: 1400px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.TopBanderLeft{
+    display: flex;
+    align-items: center;
+ 
+}
+.TopBanderLeft img{
+    width: 120px;
+}
+.searchInput{
+    position: relative;
+    margin-left: 20px;
+}
+.searchInput input{
+    width: 233px;
+    height: 28px;
+    padding: 3px 5px 3px 22px;
+    border-radius: 23px;
+    background-color: #888;
+    border: none;
+    color: #000;
+}
+.searchInput input:focus{
+    background-color: #fff;
+    outline: none; 
+}
+.searchInput span{
+    position: absolute;
+    left: 10px;
+    font-size: 14px;
+    top: calc(50% - 7px);
+}
+.TopBanderRight ul{
+    display: flex;
+    align-items: center;
+    color: #ccc;
+    margin: 0;
+    cursor: pointer;
+}
+.TopBanderRight ul li{
+    margin-right: 31px;
+}
+.TopBanderRight ul li:nth-last-child(1){
+    margin-right: 0;
+}
+.TopBanderRight ul li:hover{
+    color: #fff;
+}
+.ContontBoxBander{
+    width: 1420px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.contontRightContont{
+    padding: 10px;
+    border-radius: 0 0 3px 3px;
+    background: #FFF;
+}
+.qb-content-wrapper{
+    width: 1095px;
+}
+/* 内容 */
+.ContontBox{
+    padding: 15px;
+    background-color: #e1e1e1;
+}
+.tab-pane ul{
+    background-color: #FFF;
+    padding: 0;
+    margin: 0;
+}
+.tab-pane ul li,.tab-pane ul li div{
+    display: flex;
+    align-items: center;
+}
+.tab-pane ul li{
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+.tab-pane ul li:nth-last-child(1){
+    border: none;
+}
+.Tabtime{
+    color: #778087;margin-left: 3px;
+}
+.navlist{
+    width: 100%;background: #FFF;padding: 10px;
+}
+.pagination{
+    margin: 0;
+}
+.topIcon{
+    background: #80bd01;
+    padding: 2px 4px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    color: #fff;
+    font-size: 12px;
+    margin-right:2px ;
+}
+.TabDataTitle{
+    max-width: 70%;
+    -o-text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 16px;
+    line-height: 30px;
+}
+.TabDataTitle:hover{
+    cursor: pointer;
+    text-decoration:underline
+}
+html,body,#contont,.ContontBox{
+    height: 100%;
+}
+
+.TabDataNum{
+    font-size: 10px;
+    color: #b4b4b4;
+    margin: 0 11px;
+}
+
+.TabDataAvauter{
+    width: 30px;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+/* 修改框架css */
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+    background-color: #80bd01;
+    color: #fff;
+    padding: 3px 4px;
+    border-radius: 3px;
+}
+.nav>li>a:hover{
+  color: #337ab7; 
+}
+.nav>li>a{
+    padding: 3px 4px;
+    color:#80bd01 ;
+}
+.nav-tabs{
+    background: #f6f6f6;
+    border-radius: 3px 3px 0 0;
+    padding: 10px;
+}
